@@ -42,7 +42,11 @@ Para que cuente las líneas le añado la c y elimino el comando --color
 mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE o$ aquella_voluntad.txt 
 60
 ```
+2.2 Numero de lineas que terminan en o O a
 
+en la siguiente imagen se ver un ejemplo de como hemos realizado el ejercicio y los comandos usados.
+
+![palabras en o O a 2021-11-10 a las 15 31 40](https://user-images.githubusercontent.com/92113168/141134537-8e236003-bfd5-4f5d-97be-e62189b33380.png)
 
 Como en el ejercicio anterior ahora que sé que está bien elimino el --color y añado la c
 ```
