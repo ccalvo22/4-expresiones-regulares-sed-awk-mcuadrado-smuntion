@@ -18,37 +18,16 @@ Usando el fichero `aquella_voluntad.txt`, identifica usando grep:
 3. El número de líneas pares que terminan por `o` o por `a`
 4. Todas las palabras que empiezan y acaban por `s` (ordenadas alfabéticamente)
 5. Todas las palabras que no empiezan por t y acaban por `s`. (ordenadas por número de línea)
-6. Todas las palabras que empiezan y acaban por la misma letra (volver a este punto al acabar toda la lección). 
+6. Todas las palabras que emp!
+iezan y acaban por la misma letra (volver a este punto al acabar toda la lección). 
 
 ### Respuesta ejercicio 1
 
 **1.1: Terminar en o**
 
 ```
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E o$ --color aquella_voluntad.txt 
-celebrándose irá, y aquel sonido
-De cuatro ninfas que del Tajo amado
-el agua baña el prado con sonido
-   Con tanta mansedumbre el cristalino
-que pudieran los ojos el camino
-la cabeza sacó, y el prado ameno
-Las aves en el fresco apartamiento
-Secaba entonces el terreno aliento
-y en mirando de fuera, vieron luego
-El agua clara con lascivo juego
-para seguir el delicado estilo
-de los colores que antes le habían dado
-llamada la mayor, con diestra mano
-a perder otra vez, y del tirano
-   Dinámene no menos artificio
-pintando a Apolo en el robusto oficio
-Mudar luego le hace el ejercicio
-que hizo a Apolo consumirse en lloro
-por áspero camino, tan sin tiento
-El va siguiendo, y ella huye como
-el oro y las colores matizando
-estaba los colmillos aguzando
-   Tras esto el puerco allí se vía herido
+![palabras terminan en o](https://user-images.githubusercontent.com/92113168/141131550-1149c8cc-d314-40e1-8fd8-0b1d6d5b096f.png)
+
 ```
 Para que cuente las líneas le añado la c y elimino el comando --color
 
@@ -59,24 +38,8 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE o$
 
 **2.2 --->  o OR a**
 
-```
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E 'o$|a$' --color aquella_voluntad.txt 
-Aquella voluntad honesta y pura (Ga
-a despecho y pesar de la ventura
-   Y aún no se me figura que me toca
-mas con la lengua muerta y fría en la boca
-Libre mi alma de su estrecha roca
-celebrándose irá, y aquel sonido
-y lo que siento más es que la carta
-De cuatro ninfas que del Tajo amado
-   Cerca del Tajo en soledad amena
-el agua baña el prado con sonido
-   Con tanta mansedumbre el cristalino
-que pudieran los ojos el camino
-una ninfa del agua do moraba
-la cabeza sacó, y el prado ameno
-Las aves en el fresco apartamiento
-Secaba entonces el terreno aliento
+![palabras que terminan en o o a 2021-11-10 a las 15 27 34](https://user-images.githubusercontent.com/92113168/141132258-48e97082-8cf3-41bf-a655-0cbcd20e83b8.png)
+
 ```
 Como en el ejercicio anterior ahora que sé que está bien elimino el --color y añado la c
 ```
