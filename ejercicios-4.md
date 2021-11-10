@@ -25,9 +25,15 @@ iezan y acaban por la misma letra (volver a este punto al acabar toda la lecció
 
 **1.1: Terminar en o**
 
-```![palabras que terminan en o 2021-11-10 a las 15 27 09](https://user-images.githubusercontent.com/92113168/141133273-fe2d300b-7018-42f7-a04a-a7a6674e7e74.png)
+```
+![palabras que terminan en o 2021-11-10 a las 15 27 09](https://user-images.githubusercontent.com/92113168/141133273-fe2d300b-7018-42f7-a04a-a7a6674e7e74.png)
 
 
+
+```
+
+
+![palabras que terminan en o o a 2021-11-10 a las 15 27 34](https://user-images.githubusercontent.com/92113168/141132258-48e97082-8cf3-41bf-a655-0cbcd20e83b8.png)
 
 ```
 Para que cuente las líneas le añado la c y elimino el comando --color
@@ -37,11 +43,7 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE o$
 60
 ```
 
-**2.2 --->  o OR a**
 
-![palabras que terminan en o o a 2021-11-10 a las 15 27 34](https://user-images.githubusercontent.com/92113168/141132258-48e97082-8cf3-41bf-a655-0cbcd20e83b8.png)
-
-```
 Como en el ejercicio anterior ahora que sé que está bien elimino el --color y añado la c
 ```
 mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE 'o$|a$' aquella_voluntad.txt 
