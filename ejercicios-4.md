@@ -25,8 +25,9 @@ iezan y acaban por la misma letra (volver a este punto al acabar toda la lecció
 
 **1.1: Terminar en o**
 
-```
-![palabras terminan en o](https://user-images.githubusercontent.com/92113168/141131550-1149c8cc-d314-40e1-8fd8-0b1d6d5b096f.png)
+```![palabras que terminan en o 2021-11-10 a las 15 27 09](https://user-images.githubusercontent.com/92113168/141133273-fe2d300b-7018-42f7-a04a-a7a6674e7e74.png)
+
+
 
 ```
 Para que cuente las líneas le añado la c y elimino el comando --color
