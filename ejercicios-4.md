@@ -110,11 +110,49 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o 
 ```
 
 **1.5 Todas las palabras que no empiezan por `t` y acaban por `s`. (ordenadas por número de línea)**
+```
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o '^[^(t)]\w+s\b' aquella_voluntad.txt
+                                                                      OR
+                                                                       grep -E -o '^[^(t)]\w*s\b' aquella_voluntad.txt
+                                                                      
+mas
+pues
+mas
+Las
+los
+las
+las
+después
+los
+las
+antes
+entretejidas
+cestillos
+las
+antes
+mas
+las
+claras
+las
+los
+los
+dos
+las
+mancebos
+más
+más
+mas
+las
+sabemos
+mas
+juntas
+las
+```
+**1.6 Todas las palabras que empiezan y acaban por la misma letra
 
+```
 
-
-
-
+```
 
 ## Ejercicio 2
 ¿Cuántos gene_ids existen con varios ceros seguidos en los dos gtfs (Humano y Drosophila)?. ¿Cuáles son? ¿Cuántas veces aparece cada uno en el .gtf dado?
