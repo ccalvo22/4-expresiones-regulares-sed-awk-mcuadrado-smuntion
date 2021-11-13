@@ -23,36 +23,37 @@ iezan y acaban por la misma letra (volver a este punto al acabar toda la lecció
 
 ### Respuesta ejercicio 1
 
-**1.1: Terminar en o**
+**1.1 Número de líneas que terminan en o**
 
-```
+En la siguiente imagen se ve un ejemplo de como hemos realizado el ejercicio y los comandos usados.
+
 ![palabras que terminan en o 2021-11-10 a las 15 27 09](https://user-images.githubusercontent.com/92113168/141133273-fe2d300b-7018-42f7-a04a-a7a6674e7e74.png)
 
-
-
-```
-
-
-![palabras que terminan en o o a 2021-11-10 a las 15 27 34](https://user-images.githubusercontent.com/92113168/141132258-48e97082-8cf3-41bf-a655-0cbcd20e83b8.png)
-
-```
 Para que cuente las líneas le añado la c y elimino el comando --color
-
 ```
 mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE o$ aquella_voluntad.txt 
 60
 ```
-2.2 Numero de lineas que terminan en o O a
 
-en la siguiente imagen se ver un ejemplo de como hemos realizado el ejercicio y los comandos usados.
+
+**2.2 Numero de lineas que terminan en o O a**
+
+En la siguiente imagen se ve un ejemplo de como hemos realizado el ejercicio y los comandos usados.
 
 ![palabras en o O a 2021-11-10 a las 15 31 40](https://user-images.githubusercontent.com/92113168/141134537-8e236003-bfd5-4f5d-97be-e62189b33380.png)
 
-Como en el ejercicio anterior ahora que sé que está bien elimino el --color y añado la c
+Como en el ejercicio anterior, ahora que sé que está bien elimino el --color y añado la c
 ```
 mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE 'o$|a$' aquella_voluntad.txt 
 119
 ```
+
+
+
+**2.2 Numero de lineas pares que terminan en o O a**
+
+
+
 
 
 ## Ejercicio 2
