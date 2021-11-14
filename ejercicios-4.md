@@ -148,7 +148,7 @@ mas
 juntas
 las
 ```
-**1.6 Todas las palabras que empiezan y acaban por la misma letra
+**1.6 Todas las palabras que empiezan y acaban por la misma letra**
 
 ```
 
@@ -159,6 +159,142 @@ las
 Explora el fichero de anotaciones para ver si existen otros gene_ids con muchos números seguidos iguales.
 
 ### Respuesta ejercicio 2
+
+**Drosophila**
+```
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | head -n5
+gene_id "FBgn0037232"; transcript_id "FBtr0273009"
+gene_id "FBgn0037232"; transcript_id "FBtr0273009"
+gene_id "FBgn0037232"; transcript_id "FBtr0273009"
+gene_id "FBgn0037232"; transcript_id "FBtr0273009"
+gene_id "FBgn0037232"; transcript_id "FBtr0273009"
+
+NO ENTIENDO PORQUE DA EL TRANSCRITO Y NO PARA EN LA SEGUNDA COMILLA : "FBgn0037232"
+
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | wc -l
+17435
+```
+```
+CUALES SON Y CUANTAS VECES APARECEN
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | uniq -c
+     35 gene_name "smash"
+      8 gene_name "CG12007"
+      4 gene_name "CG1161"
+     27 gene_name "CG11000"
+      3 gene_name "CG18744"
+      1 gene_name "CG44227"
+     18 gene_name "ScsbetaA"
+     17 gene_name "Csk"
+     12 gene_name "Lk6"
+      9 gene_name "prd1"
+     19 gene_name "Sbf"
+     27 gene_name "CG10005"
+      2 gene_name "CG14384"
+    104 gene_name "CG6006"
+     31 gene_name "CG4009"
+      5 gene_name "naz"
+      7 gene_name "WRNexo"
+      7 gene_name "gl"
+      7 gene_name "CG7675"
+      3 gene_name "CG14309"
+     23 gene_name "CG6005"
+     12 gene_name "CG34008"
+     12 gene_name "CG4000"
+     12 gene_name "CG7009"
+      6 gene_name "AdipoR"
+     15 gene_name "CG6000"
+      4 gene_name "CG17782"
+      3 gene_name "CG17781"
+      9 gene_name "CG17780"
+      3 gene_name "CG13615"
+      3 gene_name "CG13616"
+      8 gene_name "nAChRalpha1"
+     10 gene_name "CG7006"
+      1 gene_name "CG14245"
+      8 gene_name "Tsp97E"
+      
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | sort | uniq -c | wc -l
+326
+```
+```
+OTROS GENES MUCHOS NUMEROS SEGUIDOS 
+cuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | head -n5
+gene_id "FBgn0267431"; gene_name "Myo81F"
+gene_id "FBgn0267431"; transcript_id "FBtr0392909"; gene_name "Myo81F"
+gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "1"; gene_name "Myo81F"
+gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "2"; gene_name "Myo81F"
+gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "2"; gene_name "Myo81F"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_source "FlyBase"; transcript_biotype "protein_coding"; protein_id "FBpp0352251"
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | tail -n10
+
+gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "1"; gene_name "CG40635"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_source "FlyBase"; transcript_biotype "protein_coding"; protein_id "FBpp0291548"
+gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "1"; gene_name "CG40635"
+gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "2"; gene_name "CG40635"
+gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "2"; gene_name "CG40635"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_source "FlyBase"; transcript_biotype "protein_coding"; protein_id "FBpp0291548"
+gene_id "FBgn0259870"; gene_name "Su(Ste):CR42439"
+gene_id "FBgn0259870"; transcript_id "FBtr0300167"; gene_name "Su(Ste):CR42439"
+gene_id "FBgn0259870"; transcript_id "FBtr0300167"; exon_number "1"; gene_name "Su(Ste):CR42439"
+gene_id "FBgn0085511"; gene_name "lncRNA:CR40719"
+gene_id "FBgn0085511"; transcript_id "FBtr0304147"; gene_name "lncRNA:CR40719"
+gene_id "FBgn0085511"; transcript_id "FBtr0304147"; exon_number "1"; gene_name "lncRNA:CR40719"
+
+
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | sort | uniq -c | head -n10
+      4 gene_name "140up"
+      8 gene_name "18w"
+      4 gene_name "2mit"
+     23 gene_name "312"
+     25 gene_name "5PtaseI"
+      4 gene_name "7B2"
+     28 gene_name "a"
+      2 gene_name "a5"
+      3 gene_name "a6"
+      3 gene_name "AANAT1"
+
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | sort | uniq -c | tail -10
+     14 gene_name "ZnT86D"
+    105 gene_name "zormin"
+      6 gene_name "zpg"
+      2 gene_name "Zpr1"
+     10 gene_name "Zw"
+      2 gene_name "Zw10"
+      4 gene_name "Zwilch"
+     49 gene_name "zyd"
+      3 gene_name "zye"
+     34 gene_name "Zyx"
+     
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | sort | uniq -c | wc -l
+12345
+```
+
+**HOMO.GTF**
+```
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*(0{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz | head -n5
+gene_id "ENSG00000238009"
+gene_id "ENSG00000238009"
+gene_id "ENSG00000238009"
+gene_id "ENSG00000238009"
+gene_id "ENSG00000238009"
+
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*(0{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz | tail -n5
+gene_id "ENSG00000275063"; gene_version "1"; transcript_id "ENST00000618003"
+gene_id "ENSG00000275063"; gene_version "1"; transcript_id "ENST00000618003"
+gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000614336"; transcript_version "4"; exon_number "11"; gene_name "AC240274.1"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "AC240274.1-201"; transcript_source "ensembl"; transcript_biotype "protein_coding"; exon_id "ENSE00003717009"
+gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000612640"; transcript_version "4"; exon_number "11"; gene_name "AC240274.1"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "AC240274.1-202"; transcript_source "ensembl"; transcript_biotype "protein_coding"; exon_id "ENSE00003717009"
+gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000616361"; transcript_version "1"; exon_number "15"; gene_name "AC240274.1"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "AC240274.1-204"; transcript_source "ensembl"; transcript_biotype "protein_coding"; exon_id "ENSE00003717009"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Ejercicio 3
