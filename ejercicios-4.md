@@ -332,9 +332,19 @@ Al final, para cada secuencia, imprimirá su nombre y el número de caracteres q
 
 ### Respuesta ejercicio 3
 
+**ME RINDO, NO SE HACERLO**
+```
+mcuadrado@cpg3:~$ awk 'S0 == /[AGCT]/' covid.fasta | tr -d \n | tee covid-copy.fasta | awk 'S0 == ">*"' {print $1} covid-copy.fasta | wc -l este no me da el nº de caracteres de la seq pero es que no lo sé hacer
+awk: fatal: cannot open file `{print' for reading: No existe el fichero o el directorio
+```
+
 
 ## Ejercicio 4
 En la sección 3.1., convertimos la cadena `chr1:3214482-3216968` a un formato tabular con `sed`. Sin embargo, existen otras maneras en las que podríamos haber obtenido el mismo resultado final. ¿Se te ocurren algunas? Recuerda que puedes usar el flag `g`, o puedes encadenar distintas llamadas a `sed` con tuberías si ves que meterlo todo en una única expresión regular se te antoja complicado. 
 
 ### Respuesta ejercicio 4
+```
+mcuadrado@cpg3:~$ echo chr1:3214482-3216968 | sed -E 's/[:-]/\t/g'
+chr1	3214482	3216968
+```
 
