@@ -218,14 +218,16 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -
 ```
 ```
 OTROS GENES MUCHOS NUMEROS SEGUIDOS 
+
 cuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | head -n5
 gene_id "FBgn0267431"; gene_name "Myo81F"
 gene_id "FBgn0267431"; transcript_id "FBtr0392909"; gene_name "Myo81F"
 gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "1"; gene_name "Myo81F"
 gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "2"; gene_name "Myo81F"
 gene_id "FBgn0267431"; transcript_id "FBtr0392909"; exon_number "2"; gene_name "Myo81F"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_source "FlyBase"; transcript_biotype "protein_coding"; protein_id "FBpp0352251"
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | tail -n10
 
+
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*([1-9]{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | tail -n10
 gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "1"; gene_name "CG40635"; gene_source "FlyBase"; gene_biotype "protein_coding"; transcript_source "FlyBase"; transcript_biotype "protein_coding"; protein_id "FBpp0291548"
 gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "1"; gene_name "CG40635"
 gene_id "FBgn0085506"; transcript_id "FBtr0302344"; exon_number "2"; gene_name "CG40635"
@@ -282,20 +284,46 @@ gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000614336"; tr
 gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000612640"; transcript_version "4"; exon_number "11"; gene_name "AC240274.1"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "AC240274.1-202"; transcript_source "ensembl"; transcript_biotype "protein_coding"; exon_id "ENSE00003717009"
 gene_id "ENSG00000271254"; gene_version "6"; transcript_id "ENST00000616361"; transcript_version "1"; exon_number "15"; gene_name "AC240274.1"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "AC240274.1-204"; transcript_source "ensembl"; transcript_biotype "protein_coding"; exon_id "ENSE00003717009"
 
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*(0{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz |wc -l
+87593
+```
+```
+CUALES SON Y CUANTAS VECES APARECEN
 
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*(0{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz |grep -E -o 'gene_name "\w+"' | sort | uniq -c | head -n10
+      1 gene_name "A1BG"
+      1 gene_name "A2M"
+      1 gene_name "A4GALT"
+      1 gene_name "AAAS"
+      1 gene_name "AACSP1"
+      1 gene_name "AADACP1"
+      1 gene_name "AAGAB"
+      1 gene_name "AAMDC"
+     20 gene_name "AARS1"
+      1 gene_name "AARSD1"
 
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*(0{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz |grep -E -o 'gene_name "\w+"' | sort | uniq -c | wc -l
+5896
+```
 
+```
+OTROS GENES MUCHOS NUMEROS SEGUIDOS
 
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*([1-9]{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz |grep -E -o 'gene_name "\w+"' | sort | uniq -c
+   7 gene_name "ZXDA"
+      7 gene_name "ZXDB"
+     56 gene_name "ZXDC"
+     98 gene_name "ZYG11A"
+      1 gene_name "ZYG11AP1"
+     67 gene_name "ZYG11B"
+     92 gene_name "ZYX"
+      1 gene_name "ZYXP1"
+    143 gene_name "ZZEF1"
+    119 gene_name "ZZZ3"
 
-
-
-
-
-
-
-
-
-
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep -E -o 'gene_id ".*([1-9]{2})[^"]"' Homo_sapiens.GRCh38.102.gtf.gz |grep -E -o 'gene_name "\w+"' | sort | uniq -c | wc -l
+32897
+```
 
 ## Ejercicio 3
 
