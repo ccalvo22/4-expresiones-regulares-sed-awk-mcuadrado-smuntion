@@ -171,7 +171,7 @@ gene_id "FBgn0037232"; transcript_id "FBtr0273009"
 
 NO ENTIENDO PORQUE DA EL TRANSCRITO Y NO PARA EN LA SEGUNDA COMILLA : "FBgn0037232"
 
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | wc -l
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -cE 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf 
 17435
 ```
 ```
@@ -213,7 +213,7 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -
       1 gene_name "CG14245"
       8 gene_name "Tsp97E"
       
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -E -o 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | sort | uniq -c | wc -l
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ grep -cE 'gene_id ".*(0{2})[^"]"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -E -o 'gene_name "\w+"' | uniq -c | wc -l
 326
 ```
 ```
