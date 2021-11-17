@@ -348,7 +348,7 @@ Al final, para cada secuencia, imprimirá su nombre y el número de caracteres q
 
 ### Respuesta ejercicio 3
 
-**ME RINDO, NO SE HACERLO**
+**ME RINDO, NO SABEMOS HACERLO**
 ```
 mcuadrado@cpg3:~$ awk 'S0 == /[AGCT]/' covid.fasta | tr -d \n | tee covid-copy.fasta | awk 'S0 == ">*"' {print $1} covid-copy.fasta | wc -l este no me da el nº de caracteres de la seq pero es que no lo sé hacer
 awk: fatal: cannot open file `{print' for reading: No existe el fichero o el directorio
