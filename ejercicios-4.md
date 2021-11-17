@@ -50,8 +50,16 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE 'o
 
 
 **2.3 Numero de lineas pares que terminan por `o` o por `a`.**
+```
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -n [oa]$ aquella_voluntad.txt | grep -c "[02468]:"
+61
 
-No sabemos hacer este ejercicio -por ahora-
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -nE 'o$|a$' aquella_voluntad.txt | grep -c "[02468]:"
+61
+```
+
+
+
 
 
 
