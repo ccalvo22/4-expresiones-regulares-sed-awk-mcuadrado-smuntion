@@ -35,7 +35,7 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE o$
 ```
 
 
-**2.2 Numero de lineas que terminan por `o` o por `a`.**
+**1.2 Numero de lineas que terminan por `o` o por `a`.**
 
 En la siguiente imagen se ve un ejemplo de como hemos realizado el ejercicio y los comandos usados.
 
@@ -49,7 +49,7 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -cE 'o
 
 
 
-**2.3 Numero de lineas pares que terminan por `o` o por `a`.**
+**1.3 Numero de lineas pares que terminan por `o` o por `a`.**
 ```
 mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -n [oa]$ aquella_voluntad.txt | grep -c "[02468]:"
 61
@@ -58,13 +58,13 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -nE 'o
 61
 ```
 
+![Captura de pantalla de 2021-11-17 14-32-34](https://user-images.githubusercontent.com/91688843/142210592-b55ad6a3-b3ea-438c-b712-e70c697bc67d.png)
 
 
 
 
 
-
-**2.4 palabras que empiezan y acaban por `s` (ordenadas alfabéticamente)**
+**1.4 palabras que empiezan y acaban por `s` (ordenadas alfabéticamente)**
 
 Nos ha costado un montón pero al final lo hemos conseguido. Hemos buscado ayuda en el cheetseat de expresiones regulares y luego probando en la consola. 
 
@@ -80,7 +80,7 @@ con \* Estamos diciendo que reconozca las palabras que empiezan por s seguidos d
 con \+ con 1 o más caracteres (tiene más sentido para este texto)
 
 
-iii-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o '\bs\w+s\b' --color aquella_voluntad.txt 
+iii-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -oi '\bs\w+s\b' --color aquella_voluntad.txt 
 sentidos
 sauces
 sus
@@ -102,9 +102,9 @@ sabemos
 
 
 RESPUESTA
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o '\bs\w*s\b' aquella_voluntad.txt |sort |uniq -c
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -oi '\bs\w*s\b' aquella_voluntad.txt |sort |uniq -c
 OR
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o '\bs\w+s\b' -aquella_voluntad.txt | sort | uniq -c
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -oi '\bs\w+s\b' -aquella_voluntad.txt | sort | uniq -c
       1 sabemos
       1 salvajes
       2 sauces
@@ -119,9 +119,9 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o 
 
 **1.5 Todas las palabras que no empiezan por `t` y acaban por `s`. (ordenadas por número de línea)**
 ```
-mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -o '^[^(t)]\w+s\b' aquella_voluntad.txt
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -E -oi '^[^(t)]\w+s\b' aquella_voluntad.txt
                                                                       OR
-                                                                       grep -E -o '^[^(t)]\w*s\b' aquella_voluntad.txt
+                                                                       grep -E -oi '^[^(t)]\w*s\b' aquella_voluntad.txt
                                                                       
 mas
 pues
@@ -159,7 +159,12 @@ las
 **1.6 Todas las palabras que empiezan y acaban por la misma letra**
 
 ```
-
+mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion$ grep -Eowi "([a-z])\w+\1" aquella_voluntad.txt | head -5
+Aquella
+Aquella
+otro
+alma
+acompañada
 ```
 
 ## Ejercicio 2
