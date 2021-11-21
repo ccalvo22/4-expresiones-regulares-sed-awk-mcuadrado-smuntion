@@ -168,7 +168,8 @@ acompañada
 ```
 ![Captura de pantalla de 2021-11-17 15-03-20](https://user-images.githubusercontent.com/91688843/142215205-9378995b-9ec4-4b9f-8d3f-230d9cc59d10.png)
 
-
+### Comentarios: Muy bien, todo correcto.
+### Nota: 2.5/2.5
 
 ## Ejercicio 2
 ¿Cuántos gene_ids existen con varios ceros seguidos en los dos gtfs (Humano y Drosophila)?. ¿Cuáles son? ¿Cuántas veces aparece cada uno en el .gtf dado?
@@ -341,6 +342,9 @@ mcuadrado@cpg3:~/4-expresiones-regulares-sed-awk-mcuadrado-smuntion/gtfs$ zgrep 
 32897
 ```
 
+### Comentarios: No seleccionáis exclusivamente los gene ID, esto se debe a que en vuestra expresión regular (`gene_id ".*(0{2})[^"]"`) estáis indicando con el primer `.*` que seleccione cualquer caracter, incluyendo las comillas, lo correcto para que no seleccione las palabras con comilla es indicar `gene_id "[^"]*"` para indicar que seleccione cualquier palabra con cero o más caracteres que no sean comillas y después utilizar `gene_id ".*0{2,}.*"` para que seleccione los ID con 2 o más ceros, de tal manera que el comando correcto sería `grep -Eo 'gene_id "[^"]*"' Drosophila_melanogaster.BDGP6.28.102.gtf | grep -Eoc 'gene_id ".*0{2,}.*"'`.
+### Nota: 1.5/2.5
+
 ## Ejercicio 3
 
 Crea un pipeline que convierta un fichero fasta con secuencias partidas en múltiples líneas en otro sin saltos de línea. 
@@ -353,7 +357,8 @@ Al final, para cada secuencia, imprimirá su nombre y el número de caracteres q
 mcuadrado@cpg3:~$ awk 'S0 == /[AGCT]/' covid.fasta | tr -d \n | tee covid-copy.fasta | awk 'S0 == ">*"' {print $1} covid-copy.fasta | wc -l este no me da el nº de caracteres de la seq pero es que no lo sé hacer
 awk: fatal: cannot open file `{print' for reading: No existe el fichero o el directorio
 ```
-
+### Comentario: Este era muy difícil, lamento que no os haya salido.
+### Nota: 0.5/2.5
 
 ## Ejercicio 4
 En la sección 3.1., convertimos la cadena `chr1:3214482-3216968` a un formato tabular con `sed`. Sin embargo, existen otras maneras en las que podríamos haber obtenido el mismo resultado final. ¿Se te ocurren algunas? Recuerda que puedes usar el flag `g`, o puedes encadenar distintas llamadas a `sed` con tuberías si ves que meterlo todo en una única expresión regular se te antoja complicado. 
@@ -363,4 +368,7 @@ En la sección 3.1., convertimos la cadena `chr1:3214482-3216968` a un formato t
 mcuadrado@cpg3:~$ echo chr1:3214482-3216968 | sed -E 's/[:-]/\t/g'
 chr1	3214482	3216968
 ```
+### Comentarios: Muy bien, todo correcto.
+### Nota: 2.5/2.5
 
+## Nota final: 7.0/10
