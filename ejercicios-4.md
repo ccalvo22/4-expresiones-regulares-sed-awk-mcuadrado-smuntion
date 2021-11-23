@@ -168,7 +168,7 @@ acompañada
 ```
 ![Captura de pantalla de 2021-11-17 15-03-20](https://user-images.githubusercontent.com/91688843/142215205-9378995b-9ec4-4b9f-8d3f-230d9cc59d10.png)
 
-### Comentarios: Muy bien, todo correcto.
+### Comentarios: Muy bien, todo correcto. 
 ### Nota: 2.5/2.5
 
 ## Ejercicio 2
